@@ -1,6 +1,6 @@
 # vercel-hugo-build-sh
 
-新版本 Hugo 建议通过 go mod 安装主题，但是 vercel 为工程分配的运行环境并不可控，手动设置 InstallCommand 比较麻烦。因此这里提供一种兼容性较强的方案，自动在部署阶段安装 go 环境并完成编译部署。
+新版本 Hugo 建议通过 go mod 安装主题，但是 vercel 为工程分配的运行环境并不可控，手动设置 Install Command 比较麻烦。因此这里提供一种兼容性较强的方案，自动在部署阶段安装 go 环境并完成编译部署。
 
 ## 使用教程
 
