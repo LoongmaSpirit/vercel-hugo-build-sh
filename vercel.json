@@ -1,0 +1,208 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "version": 2,
+    "buildCommand": "chmod +x ./build.sh; ./build.sh",
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "X-Frame-Options",
+                    "value": "SAMEORIGIN"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin"
+                },
+                {
+                    "key": "Permissions-Policy",
+                    "value": "geolocation=(self), microphone=()"
+                }
+            ]
+        },
+        {
+            "source": "/:path*/",
+            "headers": [
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "key": "content-type",
+                    "value": "text/html; charset=utf-8"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=180, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.xml)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "text/xml; charset=utf-8"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "no-store"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.ico)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "image/x-icon"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.webp)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "image/webp"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.svg)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "image/svg+xml; charset=utf-8"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.png)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "image/png"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.jpg)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "image/jpeg"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.jpeg)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "image/jpeg"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.css)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "text/css; charset=utf-8"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                },
+                {
+                    "key": "X-Robots-Tag",
+                    "value": "noindex"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.js)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "application/javascript; charset=utf-8"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                },
+                {
+                    "key": "X-Robots-Tag",
+                    "value": "noindex"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.json)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "text/javascript; charset=UTF-8"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                },
+                {
+                    "key": "X-Robots-Tag",
+                    "value": "noindex"
+                }
+            ]
+        },
+        {
+            "source": "/(.*\\.woff2)",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "font/woff2"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "max-age=31536000, immutable"
+                },
+                {
+                    "key": "X-Robots-Tag",
+                    "value": "noindex"
+                }
+            ]
+        }
+    ]
+}
